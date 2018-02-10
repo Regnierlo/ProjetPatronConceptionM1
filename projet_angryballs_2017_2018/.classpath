@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="exodecorateur_angryballs_maladroit_sources"/>
+	<classpathentry kind="lib" path="exodecorateur_angryballs_maladroit_sources.jar"/>
+	<classpathentry kind="lib" path="mesmaths_sources.jar"/>
+	<classpathentry kind="output" path="exodecorateur_angryballs_maladroit_sources"/>
+</classpath>
