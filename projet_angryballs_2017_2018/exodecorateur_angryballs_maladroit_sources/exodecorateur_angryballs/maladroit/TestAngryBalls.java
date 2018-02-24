@@ -4,12 +4,13 @@ import java.awt.Color;
 import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
-
+import exodecorateur_angryballs.maladroit.modele.Billable;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond;
+import exodecorateur_angryballs.maladroit.modele.Rebond;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
@@ -29,7 +30,7 @@ public class TestAngryBalls {
 		// ------------------- création de la liste (pour l'instant vide) des billes
 		// -----------------------
 
-		Vector<Bille> billes = new Vector<Bille>();
+		Vector<Billable> billes = new Vector<Billable>();
 
 		// ---------------- création de la vue responsable du dessin des billes
 		// -------------------------
@@ -76,11 +77,12 @@ public class TestAngryBalls {
 		// --------------- ici commence la partie à changer
 		// ---------------------------------
 
-		billes.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
-		billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
-		billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-		billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
-		billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));
+		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
+		//.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
+		//billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
+		//billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
+		//billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
+		//billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));
 
 		// ---------------------- ici finit la partie à changer
 		// -------------------------------------------------------------

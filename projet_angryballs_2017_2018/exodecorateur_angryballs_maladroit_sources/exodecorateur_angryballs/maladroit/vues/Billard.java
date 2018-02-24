@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import java.util.Vector;
 
+import exodecorateur_angryballs.maladroit.modele.Billable;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 
 /**
@@ -14,10 +15,10 @@ import exodecorateur_angryballs.maladroit.modele.Bille;
  * 
  */
 public class Billard extends Canvas {
-	Vector<Bille> billes;
+	Vector<Billable> billes;
 
-	public Billard(Vector<Bille> billes) {
-		this.billes = billes;
+	public Billard(Vector<Billable> billes2) {
+		this.billes = billes2;
 	}
 
 	/*

@@ -2,6 +2,7 @@ package exodecorateur_angryballs.maladroit;
 
 import java.util.Vector;
 
+import exodecorateur_angryballs.maladroit.modele.Billable;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
@@ -15,7 +16,7 @@ import exodecorateur_angryballs.maladroit.vues.VueBillard;
  */
 public class AnimationBilles implements Runnable {
 
-	Vector<Bille> billes; // la liste de toutes les billes en mouvement
+	Vector<Billable> billes; // la liste de toutes les billes en mouvement
 	VueBillard vueBillard; // la vue responsable du dessin des billes
 	private Thread thread; // pour lancer et arrêter les billes
 
@@ -25,7 +26,7 @@ public class AnimationBilles implements Runnable {
 	 * @param billes
 	 * @param vueBillard
 	 */
-	public AnimationBilles(Vector<Bille> billes, VueBillard vueBillard) {
+	public AnimationBilles(Vector<Billable> billes, VueBillard vueBillard) {
 		this.billes = billes;
 		this.vueBillard = vueBillard;
 		this.thread = null; // est-ce utile ?
@@ -35,7 +36,7 @@ public class AnimationBilles implements Runnable {
 	public void run() {
 		try {
 			double deltaT; // délai entre 2 mises à jour de la liste des billes
-			Bille billeCourante;
+			Billable billeCourante;
 
 			double minRayons = AnimationBilles.minRayons(billes); // nécessaire au calcul de deltaT
 			double minRayons2 = minRayons * minRayons; // nécessaire au calcul de deltaT
@@ -80,14 +81,14 @@ public class AnimationBilles implements Runnable {
 	 * vecteurs vitesse de la liste de billes
 	 * 
 	 */
-	static double maxVitessesCarrées(Vector<Bille> billes) {
+	static double maxVitessesCarrées(Vector<Billable> billes) {
 		double vitesse2Max = 0;
 
 		int i;
 		double vitesse2Courante;
 
 		for (i = 0; i < billes.size(); ++i)
-			if ((vitesse2Courante = billes.get(i).vitesse.normeCarrée()) > vitesse2Max)
+			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrée()) > vitesse2Max)
 				vitesse2Max = vitesse2Courante;
 
 		return vitesse2Max;
@@ -98,14 +99,14 @@ public class AnimationBilles implements Runnable {
 	 * 
 	 * 
 	 */
-	static double minRayons(Vector<Bille> billes) {
+	static double minRayons(Vector<Billable> billes) {
 		double rayonMin, rayonCourant;
 
 		rayonMin = Double.MAX_VALUE;
 
 		int i;
 		for (i = 0; i < billes.size(); ++i)
-			if ((rayonCourant = billes.get(i).rayon) < rayonMin)
+			if ((rayonCourant = billes.get(i).getRayon()) < rayonMin)
 				rayonMin = rayonCourant;
 
 		return rayonMin;

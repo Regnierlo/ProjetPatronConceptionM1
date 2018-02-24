@@ -15,7 +15,7 @@ import mesmaths.geometrie.base.Vecteur;
  * 
  * 
  */
-public abstract class Bille {
+public class Bille implements Billable{
 	// ----------------- classe Bille-------------------------------------
 
 	public Vecteur position; // centre de la bille
@@ -118,7 +118,7 @@ public abstract class Bille {
 	 * classes dérivées A ce niveau le vecteur accélération est mis à zéro (c'est à
 	 * dire pas d'accélération)
 	 */
-	public void gestionAccélération(Vector<Bille> billes) {
+	public void gestionAccélération(Vector<Billable> billes) {
 		this.getAccélération().set(Vecteur.VECTEURNUL);
 	}
 
@@ -135,7 +135,7 @@ public abstract class Bille {
 	 *         renvoie false, il n'y a pas de collision et les billes sont laissées
 	 *         intactes
 	 */
-	public boolean gestionCollisionBilleBille(Vector<Bille> billes) {
+	public boolean gestionCollisionBilleBille(Vector<Billable> billes) {
 		return OutilsBille.gestionCollisionBilleBille(this, billes);
 	}
 
@@ -149,8 +149,8 @@ public abstract class Bille {
 	 * La nature du comportement de la bille en réponse à cette collision est
 	 * définie dans les classes dérivées
 	 */
-	public abstract void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
-			double hauteur);
+	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
+			double hauteur) {}
 
 	public void dessine(Graphics g) {
 		int width, height;
