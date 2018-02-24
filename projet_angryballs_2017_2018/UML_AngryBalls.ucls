@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
+  <class id="1" language="java" name="exodecorateur_angryballs.maladroit.TestAngryBalls" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/TestAngryBalls.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="158" x="270" y="78"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="exodecorateur_angryballs.maladroit.TestAnimationBilles" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/TestAnimationBilles.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="158" x="468" y="78"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="exodecorateur_angryballs.maladroit.EcouteurBoutonArreter" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/EcouteurBoutonArreter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="218" x="666" y="78"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="exodecorateur_angryballs.maladroit.EcouteurBoutonLancer" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/EcouteurBoutonLancer.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="217" x="924" y="78"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="exodecorateur_angryballs.maladroit.AnimationBilles" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/AnimationBilles.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="234" x="795" y="271"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="exodecorateur_angryballs.maladroit.VueBillardFactice" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/VueBillardFactice.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="158" x="1181" y="78"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="exodecorateur_angryballs.maladroit.modele.Bille" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/Bille.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="505" y="587"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/BilleMvtRURebond.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-124" y="906"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/BilleMvtNewtonArret.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="187" y="915"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/BilleMvtNewtonFrottementRebond.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="532" y="915"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="exodecorateur_angryballs.maladroit.modele.OutilsBille" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/OutilsBille.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="33" y="425"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/BilleMvtPesanteurFrottementRebond.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="933" y="924"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/modele/BilleMvtRUPasseMurailles.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1490" y="936"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="exodecorateur_angryballs.maladroit.vues.CadreAngryBalls" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/vues/CadreAngryBalls.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1495" y="589"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="exodecorateur_angryballs.maladroit.vues.TestCadreAngryBallsSeul" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/vues/TestCadreAngryBallsSeul.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1385" y="323"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="exodecorateur_angryballs.maladroit.vues.VueBillard" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/vues/VueBillard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1183" y="473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="exodecorateur_angryballs.maladroit.vues.Billard" 
+    project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/exodecorateur_angryballs/maladroit/vues/Billard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1168" y="693"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="outilsvues.Outils" project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/outilsvues/Outils.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1811" y="371"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="outilsvues.EcouteurTerminaison" project="projet_angryballs_2017_2018" 
+    file="/projet_angryballs_2017_2018/exodecorateur_angryballs_maladroit_sources/outilsvues/EcouteurTerminaison.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1860" y="627"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="20">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="21">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="22" name="animationBilles"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="25" name="billes"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="29" name="billard"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="31">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="33">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="34" name="vueBillard"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="37">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="38" name="animationBilles"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="42">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="43" name="ecouteurTerminaison"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="46" name="billes"/>      
+      <multiplicity id="47" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
