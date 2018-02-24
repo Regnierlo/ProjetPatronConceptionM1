@@ -27,9 +27,7 @@ public class OutilsBille {
 	 */
 	public static Vector<Billeable> autresBilles(Billeable cetteBille, Vector<Billeable> billes) {
 		Vector<Billeable> autresBilles = new Vector<Billeable>();
-
 		Billeable billeCourante;
-
 		int i;
 
 		for (i = 0; i < billes.size(); ++i) {

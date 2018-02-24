@@ -2,7 +2,6 @@ package exodecorateur_angryballs.maladroit;
 
 import java.awt.Color;
 import java.util.Vector;
-
 import mesmaths.geometrie.base.Vecteur;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
 import exodecorateur_angryballs.maladroit.modele.Frottement;
@@ -11,14 +10,8 @@ import exodecorateur_angryballs.maladroit.modele.PasseMuraille;
 import exodecorateur_angryballs.maladroit.modele.Pesanteur;
 import exodecorateur_angryballs.maladroit.modele.Arret;
 import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond;
 import exodecorateur_angryballs.maladroit.modele.Rebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
  * Gestion d'une liste de billes en mouvement ayant toutes un comportement
@@ -40,9 +33,7 @@ public class TestAngryBalls {
 		// ---------------- création de la vue responsable du dessin des billes
 		// -------------------------
 
-		CadreAngryBalls cadre = new CadreAngryBalls("Angry balls",
-				"Animation de billes ayant des comportements différents. Situation idéale pour mettre en place le DP Decorator",
-				billes);
+		CadreAngryBalls cadre = new CadreAngryBalls("Angry balls","Animation de billes ayant des comportements différents. Situation idéale pour mettre en place le DP Decorator",billes);
 
 		cadre.montrer(); // on rend visible la vue
 
@@ -54,12 +45,11 @@ public class TestAngryBalls {
 		xMax = cadre.largeurBillard(); // abscisse maximal
 		yMax = cadre.hauteurBillard(); // ordonnée maximale
 
-		double rayon = 0.05 * Math.min(xMax, yMax); // rayon des billes : ici toutes les billes ont le même rayon, mais
-													// ce n'est pas obligatoire
+		double rayon = 0.05 * Math.min(xMax, yMax); 
+		//rayon des billes : ici toutes les billes ont le même rayon, mais ce n'est pas obligatoire
 
-		Vecteur p0, p1, p2, p3, p4, v0, v1, v2, v3, v4; // les positions des centres des billes et les vecteurs vitesse
-														// au démarrage.
-														// Elles vont être choisies aléatoirement
+		Vecteur p0, p1, p2, p3, p4, v0, v1, v2, v3, v4; 
+		// les positions des centres des billes et les vecteurs vitesse au démarrage. Elles vont être choisies aléatoirement
 
 		// ------------------- création des vecteurs position des billes
 		// ---------------------------------
@@ -83,17 +73,11 @@ public class TestAngryBalls {
 		// ---------------------------------
 
 		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
-		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))), new Vecteur(0, 0.001)));
+		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))),new Vecteur(0, 0.001)));
 		billes.add(new Newton(new Frottement(new Rebond(new Bille(p2, rayon, v2, Color.green)))));
 		billes.add(new PasseMuraille(new Bille(p3, rayon, v3, Color.cyan)));
 		billes.add(new Newton(new Arret(new Bille(p4, rayon, v4, Color.black))));
-		
-		
-		/*billes.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
-		billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
-		billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-		billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
-		billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));*/
+
 
 		// ---------------------- ici finit la partie à changer
 		// -------------------------------------------------------------
@@ -116,7 +100,5 @@ public class TestAngryBalls {
 
 		cadre.lancerBilles.addActionListener(écouteurBoutonLancer); // maladroit : à changer
 		cadre.arrêterBilles.addActionListener(écouteurBoutonArrêter); // maladroit : à changer
-
 	}
-
 }

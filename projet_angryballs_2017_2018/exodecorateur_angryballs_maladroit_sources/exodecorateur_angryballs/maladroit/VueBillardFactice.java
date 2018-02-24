@@ -19,13 +19,10 @@ public class VueBillardFactice implements VueBillard {
 	@Override
 	public void miseAJour() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void montrer() {
 		// TODO Auto-generated method stub
-
 	}
-
 }

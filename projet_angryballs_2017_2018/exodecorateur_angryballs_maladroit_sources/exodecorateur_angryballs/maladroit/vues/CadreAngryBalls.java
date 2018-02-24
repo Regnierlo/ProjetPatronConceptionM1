@@ -2,12 +2,8 @@ package exodecorateur_angryballs.maladroit.vues;
 
 import java.awt.*;
 import java.util.Vector;
-
 import exodecorateur_angryballs.maladroit.modele.Billeable;
-import exodecorateur_angryballs.maladroit.modele.Bille;
-
 import outilsvues.EcouteurTerminaison;
-
 import outilsvues.Outils;
 
 /**
@@ -19,6 +15,10 @@ import outilsvues.Outils;
  * 
  */
 public class CadreAngryBalls extends Frame implements VueBillard {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	TextField présentation;
 	Billard billard;
 	public Button lancerBilles, arrêterBilles;
@@ -53,7 +53,6 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 		this.bas.add(this.lancerBilles);
 		this.arrêterBilles = new Button("arrêter les billes");
 		this.bas.add(this.arrêterBilles);
-
 	}
 
 	public double largeurBillard() {
@@ -78,5 +77,4 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 	public void montrer() {
 		this.setVisible(true);
 	}
-
 }

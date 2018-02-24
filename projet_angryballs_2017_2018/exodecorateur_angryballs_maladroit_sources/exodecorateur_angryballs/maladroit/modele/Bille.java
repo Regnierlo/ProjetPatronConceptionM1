@@ -2,9 +2,7 @@ package exodecorateur_angryballs.maladroit.modele;
 
 import java.awt.*;
 import java.util.Vector;
-
 import mesmaths.cinematique.Cinematique;
-import mesmaths.cinematique.Collisions;
 import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
@@ -23,9 +21,7 @@ public class Bille implements Billeable{
 	public Vecteur vitesse;
 	public Vecteur accélération;
 	public int clef; // identifiant unique de cette bille
-
 	private Color couleur;
-
 	private static int prochaineClef = 0;
 
 	public static double ro = 1; // masse volumique
@@ -149,8 +145,7 @@ public class Bille implements Billeable{
 	 * La nature du comportement de la bille en réponse à cette collision est
 	 * définie dans les classes dérivées
 	 */
-	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
-			double hauteur) {}
+	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,double hauteur) {}
 
 	public void dessine(Graphics g) {
 		int width, height;

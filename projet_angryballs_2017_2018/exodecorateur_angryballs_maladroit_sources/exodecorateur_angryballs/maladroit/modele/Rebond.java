@@ -11,5 +11,4 @@ public class Rebond extends Decorator{
 		Collisions.collisionBilleContourAvecRebond(this.getPosition(), this.getRayon(), this.getVitesse(),
 				abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
 	}
-
 }

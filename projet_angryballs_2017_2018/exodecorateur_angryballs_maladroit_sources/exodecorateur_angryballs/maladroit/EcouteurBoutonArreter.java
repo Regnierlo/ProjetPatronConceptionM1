@@ -19,5 +19,4 @@ public class EcouteurBoutonArreter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		this.animationBilles.arrêterAnimation();
 	}
-
 }
