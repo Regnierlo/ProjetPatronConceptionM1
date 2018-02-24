@@ -3,7 +3,7 @@ package exodecorateur_angryballs.maladroit.vues;
 import java.awt.*;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Billable;
+import exodecorateur_angryballs.maladroit.modele.Billeable;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 
 import outilsvues.EcouteurTerminaison;
@@ -26,7 +26,7 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 
 	EcouteurTerminaison ecouteurTerminaison;
 
-	public CadreAngryBalls(String titre, String message, Vector<Billable> billes) throws HeadlessException {
+	public CadreAngryBalls(String titre, String message, Vector<Billeable> billes) throws HeadlessException {
 		super(titre);
 		Outils.place(this, 0.33, 0.33, 0.5, 0.5);
 		this.ecouteurTerminaison = new EcouteurTerminaison(this);

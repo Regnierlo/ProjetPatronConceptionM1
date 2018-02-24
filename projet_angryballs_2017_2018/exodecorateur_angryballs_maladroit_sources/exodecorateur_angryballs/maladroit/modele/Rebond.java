@@ -4,9 +4,8 @@ import mesmaths.cinematique.Collisions;
 
 public class Rebond extends Decorator{
 
-	public Rebond(Billable bille) {
+	public Rebond(Billeable bille) {
 		super(bille);
-		// TODO Auto-generated constructor stub
 	}
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur, double hauteur) {
 		Collisions.collisionBilleContourAvecRebond(this.getPosition(), this.getRayon(), this.getVitesse(),

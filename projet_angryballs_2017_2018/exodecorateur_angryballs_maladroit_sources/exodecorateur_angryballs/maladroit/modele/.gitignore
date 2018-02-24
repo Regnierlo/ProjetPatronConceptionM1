@@ -10,3 +10,9 @@
 /Rebond.class
 /PasseMuraille.class
 /Frottement.class
+/Billeable.class
+/CollisionContourable.class
+/GestionAccelerationable.class
+/Arret.class
+/Newton.class
+/Pesanteur.class

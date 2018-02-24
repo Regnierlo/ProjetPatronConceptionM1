@@ -25,10 +25,10 @@ public class OutilsBille {
 	 *         toutes les billes sauf cetteBille
 	 * 
 	 */
-	public static Vector<Billable> autresBilles(Billable cetteBille, Vector<Billable> billes) {
-		Vector<Billable> autresBilles = new Vector<Billable>();
+	public static Vector<Billeable> autresBilles(Billeable cetteBille, Vector<Billeable> billes) {
+		Vector<Billeable> autresBilles = new Vector<Billeable>();
 
-		Billable billeCourante;
+		Billeable billeCourante;
 
 		int i;
 
@@ -60,18 +60,18 @@ public class OutilsBille {
 	 *         renvoie false, il n'y a pas de collision et les billes sont laissées
 	 *         intactes
 	 */
-	public static boolean gestionCollisionBilleBille(Bille cetteBille, Vector<Billable> billes) {
+	public static boolean gestionCollisionBilleBille(Bille cetteBille, Vector<Billeable> billes) {
 		// --- on récupère d'abord dans autresBilles toutes les billes sauf cetteBille
 		// ----
 
-		Vector<Billable> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
+		Vector<Billeable> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
 
 		// --- on cherche à présent la 1ère des autres billes avec laquelle cetteBille
 		// est en collision ---------------------
 		// -------------- on suppose qu'il ne peut y avoir de collision qui implique
 		// plus de deux billes à la fois ---------------
 
-		Billable billeCourante;
+		Billeable billeCourante;
 
 		int i;
 
@@ -100,17 +100,17 @@ public class OutilsBille {
 	 * @return a : le vecteur accélération résultant
 	 * 
 	 */
-	public static Vecteur gestionAccélérationNewton(Billable cetteBille, Vector<Billable> billes) {
+	public static Vecteur gestionAccélérationNewton(Billeable cetteBille, Vector<Billeable> billes) {
 
 		// --- on récupère d'abord dans autresBilles toutes les billes sauf celle-ci
 		// ----
 
-		Vector<Billable> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
+		Vector<Billeable> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
 
 		// -------------- à présent on récupère les masses et les positions des autres
 		// billes ------------------
 		int i;
-		Billable billeCourante;
+		Billeable billeCourante;
 
 		int d = autresBilles.size();
 

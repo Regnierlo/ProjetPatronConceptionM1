@@ -5,13 +5,13 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
-public class Decorator implements Billable{
-    protected Billable bille;
+public class Decorator implements Billeable{
+    protected Billeable bille;
 
-    public Decorator(final Billable bille) {
+    public Decorator(final Billeable bille) {
         this.bille = bille;
     }
-	public void gestionAccélération(Vector<Billable> billes) {
+	public void gestionAccélération(Vector<Billeable> billes) {
 		bille.gestionAccélération(billes);
 	}
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur, double hauteur) {
@@ -48,7 +48,7 @@ public class Decorator implements Billable{
 		return bille.masse();
 	}
 	@Override
-	public boolean gestionCollisionBilleBille(Vector<Billable> billes) {
+	public boolean gestionCollisionBilleBille(Vector<Billeable> billes) {
 		return bille.gestionCollisionBilleBille(billes);
 		// TODO Auto-generated method stub
 		

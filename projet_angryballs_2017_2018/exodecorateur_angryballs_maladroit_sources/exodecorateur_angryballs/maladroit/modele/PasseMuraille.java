@@ -4,10 +4,10 @@ import mesmaths.cinematique.Collisions;
 
 public class PasseMuraille extends Decorator{
 
-	public PasseMuraille(Billable bille) {
+	public PasseMuraille(Billeable bille) {
 		super(bille);
-		// TODO Auto-generated constructor stub
 	}
+	
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
 			double hauteur) {
 		Collisions.collisionBilleContourPasseMuraille(this.getPosition(), abscisseCoinHautGauche,

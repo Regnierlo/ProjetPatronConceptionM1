@@ -4,7 +4,12 @@ import java.awt.Color;
 import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
-import exodecorateur_angryballs.maladroit.modele.Billable;
+import exodecorateur_angryballs.maladroit.modele.Billeable;
+import exodecorateur_angryballs.maladroit.modele.Frottement;
+import exodecorateur_angryballs.maladroit.modele.Newton;
+import exodecorateur_angryballs.maladroit.modele.PasseMuraille;
+import exodecorateur_angryballs.maladroit.modele.Pesanteur;
+import exodecorateur_angryballs.maladroit.modele.Arret;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
@@ -30,7 +35,7 @@ public class TestAngryBalls {
 		// ------------------- création de la liste (pour l'instant vide) des billes
 		// -----------------------
 
-		Vector<Billable> billes = new Vector<Billable>();
+		Vector<Billeable> billes = new Vector<Billeable>();
 
 		// ---------------- création de la vue responsable du dessin des billes
 		// -------------------------
@@ -78,11 +83,17 @@ public class TestAngryBalls {
 		// ---------------------------------
 
 		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
-		//.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
-		//billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
-		//billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-		//billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
-		//billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));
+		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))), new Vecteur(0, 0.001)));
+		billes.add(new Newton(new Frottement(new Rebond(new Bille(p2, rayon, v2, Color.green)))));
+		billes.add(new PasseMuraille(new Bille(p3, rayon, v3, Color.cyan)));
+		billes.add(new Newton(new Arret(new Bille(p4, rayon, v4, Color.black))));
+		
+		
+		/*billes.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
+		billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
+		billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
+		billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
+		billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));*/
 
 		// ---------------------- ici finit la partie à changer
 		// -------------------------------------------------------------
