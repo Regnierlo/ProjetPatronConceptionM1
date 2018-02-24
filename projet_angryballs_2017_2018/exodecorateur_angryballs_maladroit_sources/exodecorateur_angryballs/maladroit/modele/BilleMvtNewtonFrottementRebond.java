@@ -16,7 +16,7 @@ import mesmaths.mecanique.MecaniquePoint;
  * A MODIFIER
  * 
  */
-public class BilleMvtNewtonFrottementRebond extends Bille {
+public class BilleMvtNewtonFrottementRebond extends Decorator {
 
 	public BilleMvtNewtonFrottementRebond(Vecteur centre, double rayon, Vecteur vitesse, Color couleur) {
 		super(centre, rayon, vitesse, couleur);

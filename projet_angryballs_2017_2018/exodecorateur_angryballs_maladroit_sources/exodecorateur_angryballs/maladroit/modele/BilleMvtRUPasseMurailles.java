@@ -15,7 +15,7 @@ import mesmaths.geometrie.base.Vecteur;
  * 
  */
 
-public class BilleMvtRUPasseMurailles extends Bille {
+public class BilleMvtRUPasseMurailles extends Decorator {
 
 	/**
 	 * @param centre

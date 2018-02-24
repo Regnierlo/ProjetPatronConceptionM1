@@ -5,3 +5,8 @@
 /BilleMvtRUPasseMurailles.class
 /BilleMvtRURebond.class
 /OutilsBille.class
+/Billable.class
+/Decorator.class
+/Rebond.class
+/PasseMuraille.class
+/Frottement.class
