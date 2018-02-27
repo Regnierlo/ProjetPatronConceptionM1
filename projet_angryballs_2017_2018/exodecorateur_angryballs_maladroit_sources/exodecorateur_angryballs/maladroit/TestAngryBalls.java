@@ -15,9 +15,9 @@ import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
 
 /**
  * Gestion d'une liste de billes en mouvement ayant toutes un comportement
- * différent
+ * diffï¿½rent
  * 
- * Idéal pour mettre en place le DP decorator
+ * Idï¿½al pour mettre en place le DP decorator
  */
 public class TestAngryBalls {
 
@@ -25,15 +25,15 @@ public class TestAngryBalls {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// ------------------- création de la liste (pour l'instant vide) des billes
+		// ------------------- crï¿½ation de la liste (pour l'instant vide) des billes
 		// -----------------------
 
 		Vector<Billeable> billes = new Vector<Billeable>();
 
-		// ---------------- création de la vue responsable du dessin des billes
+		// ---------------- crï¿½ation de la vue responsable du dessin des billes
 		// -------------------------
 
-		CadreAngryBalls cadre = new CadreAngryBalls("Angry balls","Animation de billes ayant des comportements différents. Situation idéale pour mettre en place le DP Decorator",billes);
+		CadreAngryBalls cadre = new CadreAngryBalls("Angry balls","Animation de billes ayant des comportements diffï¿½rents. Situation idï¿½ale pour mettre en place le DP Decorator",billes);
 
 		cadre.montrer(); // on rend visible la vue
 
@@ -43,33 +43,33 @@ public class TestAngryBalls {
 		double xMax, yMax;
 		double vMax = 0.1;
 		xMax = cadre.largeurBillard(); // abscisse maximal
-		yMax = cadre.hauteurBillard(); // ordonnée maximale
+		yMax = cadre.hauteurBillard(); // ordonnï¿½e maximale
 
 		double rayon = 0.05 * Math.min(xMax, yMax); 
-		//rayon des billes : ici toutes les billes ont le même rayon, mais ce n'est pas obligatoire
+		//rayon des billes : ici toutes les billes ont le mï¿½me rayon, mais ce n'est pas obligatoire
 
 		Vecteur p0, p1, p2, p3, p4, v0, v1, v2, v3, v4; 
-		// les positions des centres des billes et les vecteurs vitesse au démarrage. Elles vont être choisies aléatoirement
+		// les positions des centres des billes et les vecteurs vitesse au dï¿½marrage. Elles vont ï¿½tre choisies alï¿½atoirement
 
-		// ------------------- création des vecteurs position des billes
+		// ------------------- crï¿½ation des vecteurs position des billes
 		// ---------------------------------
 
-		p0 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
-		p1 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
-		p2 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
-		p3 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
-		p4 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+		p0 = Vecteur.crï¿½ationAlï¿½atoire(0, 0, xMax, yMax);
+		p1 = Vecteur.crï¿½ationAlï¿½atoire(0, 0, xMax, yMax);
+		p2 = Vecteur.crï¿½ationAlï¿½atoire(0, 0, xMax, yMax);
+		p3 = Vecteur.crï¿½ationAlï¿½atoire(0, 0, xMax, yMax);
+		p4 = Vecteur.crï¿½ationAlï¿½atoire(0, 0, xMax, yMax);
 
-		// ------------------- création des vecteurs vitesse des billes
+		// ------------------- crï¿½ation des vecteurs vitesse des billes
 		// ---------------------------------
 
-		v0 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
-		v1 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, 0);
-		v2 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
-		v3 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
-		v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
+		v0 = Vecteur.crï¿½ationAlï¿½atoire(-vMax, -vMax, vMax, vMax);
+		v1 = Vecteur.crï¿½ationAlï¿½atoire(-vMax, -vMax, vMax, 0);
+		v2 = Vecteur.crï¿½ationAlï¿½atoire(-vMax, -vMax, vMax, vMax);
+		v3 = Vecteur.crï¿½ationAlï¿½atoire(-vMax, -vMax, vMax, vMax);
+		v4 = Vecteur.crï¿½ationAlï¿½atoire(-vMax, -vMax, vMax, vMax);
 
-		// --------------- ici commence la partie à changer
+		// --------------- ici commence la partie ï¿½ changer
 		// ---------------------------------
 
 		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
@@ -79,26 +79,26 @@ public class TestAngryBalls {
 		billes.add(new Newton(new Arret(new Bille(p4, rayon, v4, Color.black))));
 
 
-		// ---------------------- ici finit la partie à changer
+		// ---------------------- ici finit la partie ï¿½ changer
 		// -------------------------------------------------------------
 
 		System.out.println("billes = " + billes);
 
-		// -------------------- création de l'objet responsable de l'animation (c'est un
-		// thread séparé) -----------------------
+		// -------------------- crï¿½ation de l'objet responsable de l'animation (c'est un
+		// thread sï¿½parï¿½) -----------------------
 
 		AnimationBilles animationBilles = new AnimationBilles(billes, cadre);
 
-		// ----------------------- mise en place des écouteurs de boutons qui permettent
-		// de contrôler (un peu...) l'application -----------------
+		// ----------------------- mise en place des ï¿½couteurs de boutons qui permettent
+		// de contrï¿½ler (un peu...) l'application -----------------
 
-		EcouteurBoutonLancer écouteurBoutonLancer = new EcouteurBoutonLancer(animationBilles);
-		EcouteurBoutonArreter écouteurBoutonArrêter = new EcouteurBoutonArreter(animationBilles);
+		EcouteurBoutonLancer ï¿½couteurBoutonLancer = new EcouteurBoutonLancer(animationBilles);
+		EcouteurBoutonArreter ï¿½couteurBoutonArrï¿½ter = new EcouteurBoutonArreter(animationBilles);
 
-		// ------------------------- activation des écouteurs des boutons et ça tourne
+		// ------------------------- activation des ï¿½couteurs des boutons et ï¿½a tourne
 		// tout seul ------------------------------
 
-		cadre.lancerBilles.addActionListener(écouteurBoutonLancer); // maladroit : à changer
-		cadre.arrêterBilles.addActionListener(écouteurBoutonArrêter); // maladroit : à changer
+		cadre.lancerBilles.addActionListener(ï¿½couteurBoutonLancer); // maladroit : ï¿½ changer
+		cadre.arrï¿½terBilles.addActionListener(ï¿½couteurBoutonArrï¿½ter); // maladroit : ï¿½ changer
 	}
 }
