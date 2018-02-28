@@ -63,4 +63,31 @@ public class Decorator implements Billeable{
 		// TODO Auto-generated method stub
 		bille.dessine(g);
 	}
+	@Override
+	public void clic() {
+		bille.clic();
+		// TODO Auto-generated method stub
+	}
+	@Override
+	public void deClic() {
+		bille.deClic();
+	}
+	@Override
+	public void setPosition(Vecteur pos) {
+		bille.setPosition(pos);
+	}
+	@Override
+	public BilleState getState() {
+		return bille.getState();
+	}
+	@Override
+	public void setVitesse(Vecteur vit) {
+		// TODO Auto-generated method stub
+		bille.setVitesse(vit);
+	}
+	@Override
+	public void setAcceleration(Vecteur Accel) {
+		// TODO Auto-generated method stub
+		bille.setAcceleration(Accel);
+	}
 }
