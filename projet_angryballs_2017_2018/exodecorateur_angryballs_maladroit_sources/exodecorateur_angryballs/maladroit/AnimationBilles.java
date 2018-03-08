@@ -8,10 +8,10 @@ import exodecorateur_angryballs.maladroit.vues.CadreState;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
- * responsable de l'animation des billes, c-à-d responsable du mouvement de la
- * liste des billes. met perpétuellement à jour les billes. gère le délai entre
- * 2 mises à jour (deltaT) et prévient la vue responsable du dessin des billes
- * qu'il faut mettre à jour la scène
+ * responsable de l'animation des billes, c-ï¿½-d responsable du mouvement de la
+ * liste des billes. met perpï¿½tuellement ï¿½ jour les billes. gï¿½re le dï¿½lai entre
+ * 2 mises ï¿½ jour (deltaT) et prï¿½vient la vue responsable du dessin des billes
+ * qu'il faut mettre ï¿½ jour la scï¿½ne
  * 
  * ICI : IL N'Y A RIEN A CHANGER
  */
@@ -19,7 +19,7 @@ public class AnimationBilles implements Runnable, Observer {
 
 	Vector<Billeable> billes; // la liste de toutes les billes en mouvement
 	VueBillard vueBillard; // la vue responsable du dessin des billes
-	private Thread thread; // pour lancer et arrêter les billes
+	private Thread thread; // pour lancer et arrï¿½ter les billes
 	private static final double COEFF = 0.5;
 
 	/**
@@ -35,48 +35,48 @@ public class AnimationBilles implements Runnable, Observer {
 	@Override
 	public void run() {
 		try {
-			double deltaT; // délai entre 2 mises à jour de la liste des billes
+			double deltaT; // dï¿½lai entre 2 mises ï¿½ jour de la liste des billes
 			Billeable billeCourante;
-			double minRayons = AnimationBilles.minRayons(billes); // nécessaire au calcul de deltaT
-			double minRayons2 = minRayons * minRayons; // nécessaire au calcul de deltaT
+			double minRayons = AnimationBilles.minRayons(billes); // nï¿½cessaire au calcul de deltaT
+			double minRayons2 = minRayons * minRayons; // nï¿½cessaire au calcul de deltaT
 
 			while (!Thread.interrupted()) // gestion du mouvement
 			{
-				// deltaT = COEFF*minRayons2/(1+maxVitessesCarrées(billes)); // mise à jour
-				// deltaT. L'addition + 1 est une astuce pour éviter les divisions par zéro
+				// deltaT = COEFF*minRayons2/(1+maxVitessesCarrï¿½es(billes)); // mise ï¿½ jour
+				// deltaT. L'addition + 1 est une astuce pour ï¿½viter les divisions par zï¿½ro
 				// System.err.println("deltaT = " + deltaT);
 				deltaT = 10;
 				int i;
 				
-				for (i = 0; i < billes.size(); ++i) // mise à jour de la liste des billes
+				for (i = 0; i < billes.size(); ++i) // mise ï¿½ jour de la liste des billes
 				{
 					billeCourante = billes.get(i);
-					billeCourante.deplacer(deltaT); // mise à jour position et vitesse de cette bille
-					billeCourante.gestionAcceleration(billes); // calcul de l'accélération subie par cette bille
+					billeCourante.deplacer(deltaT); // mise ï¿½ jour position et vitesse de cette bille
+					billeCourante.gestionAcceleration(billes); // calcul de l'accï¿½lï¿½ration subie par cette bille
 					billeCourante.gestionCollisionBilleBille(billes);
 					billeCourante.collisionContour(0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard()); 
 				}
 				
-				vueBillard.miseAJour(); // on prévient la vue qu'il faut redessiner les billes
-				Thread.sleep((int) deltaT); // deltaT peut être considéré comme le délai entre 2 flashes d'un stroboscope qui éclairerait la scène
+				vueBillard.miseAJour(); // on prï¿½vient la vue qu'il faut redessiner les billes
+				Thread.sleep((int) deltaT); // deltaT peut ï¿½tre considï¿½rï¿½ comme le dï¿½lai entre 2 flashes d'un stroboscope qui ï¿½clairerait la scï¿½ne
 			}
 		}
 		catch (InterruptedException e){}
 	}
 
 	/**
-	 * calcule le maximum de de la norme carrée (pour faire moins de calcul) des
+	 * calcule le maximum de de la norme carrï¿½e (pour faire moins de calcul) des
 	 * vecteurs vitesse de la liste de billes
 	 * 
 	 */
-	static double maxVitessesCarrées(Vector<Billeable> billes) {
+	static double maxVitessesCarrï¿½es(Vector<Billeable> billes) {
 		double vitesse2Max = 0;
 		int i;
 		double vitesse2Courante;
 
 		for (i = 0; i < billes.size(); ++i)
 		{	
-			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrée()) > vitesse2Max)
+			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrï¿½e()) > vitesse2Max)
 			{
 				vitesse2Max = vitesse2Courante;
 			}			
@@ -119,8 +119,8 @@ public class AnimationBilles implements Runnable, Observer {
 	}
 
 	/***
-	 * Mise à jour des données via les observateurs en récupérant l'état de CadreState.
-	 * On lance ainsi l'animation si le bouton Lancer est cliqué sinon on l'arrête.
+	 * Mise ï¿½ jour des donnï¿½es via les observateurs en rï¿½cupï¿½rant l'ï¿½tat de CadreState.
+	 * On lance ainsi l'animation si le bouton Lancer est cliquï¿½ sinon on l'arrï¿½te.
 	 */
 	@Override
 	public void update(Observable o, Object obj) {
