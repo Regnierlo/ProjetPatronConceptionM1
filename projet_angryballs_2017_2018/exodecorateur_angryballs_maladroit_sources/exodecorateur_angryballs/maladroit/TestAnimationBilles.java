@@ -3,10 +3,8 @@ package exodecorateur_angryballs.maladroit;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.Vector;
-
 import mesmaths.geometrie.base.Vecteur;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
-import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
@@ -42,5 +40,4 @@ public class TestAnimationBilles {
 		AnimationBilles animation = new AnimationBilles(billes, vueBillardFactice);
 		animation.lancerAnimation();
 	}
-
 }

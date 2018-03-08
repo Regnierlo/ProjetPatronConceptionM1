@@ -5,6 +5,6 @@ import java.util.Vector;
 import mesmaths.geometrie.base.Vecteur;
 
 public interface GestionAccelerationable {
-	public void gestionAccélération(Vector<Billeable> billes);
-	public Vecteur getAccélération();
+	public void gestionAcceleration(Vector<Billeable> billes);
+	public Vecteur getAcceleration();
 }

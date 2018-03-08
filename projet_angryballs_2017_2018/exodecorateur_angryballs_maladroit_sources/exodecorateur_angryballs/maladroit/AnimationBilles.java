@@ -1,9 +1,10 @@
 package exodecorateur_angryballs.maladroit;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Vector;
-
 import exodecorateur_angryballs.maladroit.modele.Billeable;
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import exodecorateur_angryballs.maladroit.vues.CadreState;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
@@ -14,12 +15,11 @@ import exodecorateur_angryballs.maladroit.vues.VueBillard;
  * 
  * ICI : IL N'Y A RIEN A CHANGER
  */
-public class AnimationBilles implements Runnable {
+public class AnimationBilles implements Runnable, Observer {
 
 	Vector<Billeable> billes; // la liste de toutes les billes en mouvement
 	VueBillard vueBillard; // la vue responsable du dessin des billes
 	private Thread thread; // pour lancer et arrêter les billes
-
 	private static final double COEFF = 0.5;
 
 	/**
@@ -37,7 +37,6 @@ public class AnimationBilles implements Runnable {
 		try {
 			double deltaT; // délai entre 2 mises à jour de la liste des billes
 			Billeable billeCourante;
-
 			double minRayons = AnimationBilles.minRayons(billes); // nécessaire au calcul de deltaT
 			double minRayons2 = minRayons * minRayons; // nécessaire au calcul de deltaT
 
@@ -45,35 +44,24 @@ public class AnimationBilles implements Runnable {
 			{
 				// deltaT = COEFF*minRayons2/(1+maxVitessesCarrées(billes)); // mise à jour
 				// deltaT. L'addition + 1 est une astuce pour éviter les divisions par zéro
-
 				// System.err.println("deltaT = " + deltaT);
 				deltaT = 10;
-
 				int i;
+				
 				for (i = 0; i < billes.size(); ++i) // mise à jour de la liste des billes
 				{
 					billeCourante = billes.get(i);
-					billeCourante.déplacer(deltaT); // mise à jour position et vitesse de cette bille
-					billeCourante.gestionAccélération(billes); // calcul de l'accélération subie par cette bille
+					billeCourante.deplacer(deltaT); // mise à jour position et vitesse de cette bille
+					billeCourante.gestionAcceleration(billes); // calcul de l'accélération subie par cette bille
 					billeCourante.gestionCollisionBilleBille(billes);
-					billeCourante.collisionContour(0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard()); // System.err.println("billes
-																													// =
-																													// "
-																													// +
-																													// billes);
+					billeCourante.collisionContour(0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard()); 
 				}
-
+				
 				vueBillard.miseAJour(); // on prévient la vue qu'il faut redessiner les billes
-
-				Thread.sleep((int) deltaT); // deltaT peut être considéré comme le délai entre 2 flashes d'un
-											// stroboscope qui éclairerait la scène
+				Thread.sleep((int) deltaT); // deltaT peut être considéré comme le délai entre 2 flashes d'un stroboscope qui éclairerait la scène
 			}
 		}
-
-		catch (InterruptedException e) {
-			/* arrêt normal, il n'y a rien à faire dans ce cas */
-		}
-
+		catch (InterruptedException e){}
 	}
 
 	/**
@@ -83,46 +71,70 @@ public class AnimationBilles implements Runnable {
 	 */
 	static double maxVitessesCarrées(Vector<Billeable> billes) {
 		double vitesse2Max = 0;
-
 		int i;
 		double vitesse2Courante;
 
 		for (i = 0; i < billes.size(); ++i)
+		{	
 			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrée()) > vitesse2Max)
+			{
 				vitesse2Max = vitesse2Courante;
-
+			}			
+		}
 		return vitesse2Max;
 	}
 
 	/**
 	 * calcule le minimum des rayons de a liste des billes
 	 * 
-	 * 
 	 */
 	static double minRayons(Vector<Billeable> billes) {
 		double rayonMin, rayonCourant;
-
 		rayonMin = Double.MAX_VALUE;
 
 		int i;
 		for (i = 0; i < billes.size(); ++i)
+		{
 			if ((rayonCourant = billes.get(i).getRayon()) < rayonMin)
+			{
 				rayonMin = rayonCourant;
-
+			}
+		}
 		return rayonMin;
 	}
 
 	public void lancerAnimation() {
 		if (this.thread == null) {
+			
 			this.thread = new Thread(this);
 			thread.start();
 		}
 	}
 
-	public void arrêterAnimation() {
+	public void arreterAnimation() {
 		if (thread != null) {
 			this.thread.interrupt();
 			this.thread = null;
+		}
+	}
+
+	/***
+	 * Mise à jour des données via les observateurs en récupérant l'état de CadreState.
+	 * On lance ainsi l'animation si le bouton Lancer est cliqué sinon on l'arrête.
+	 */
+	@Override
+	public void update(Observable o, Object obj) {
+		if(o instanceof CadreState)
+		{
+			CadreState c = (CadreState) o;
+			if(c.getCadreState() == true)
+			{
+				lancerAnimation();
+			}
+			else
+			{
+				arreterAnimation();
+			}
 		}
 	}
 }

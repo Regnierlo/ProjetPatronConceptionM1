@@ -3,9 +3,7 @@ package exodecorateur_angryballs.maladroit.vues;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.util.Vector;
-
 import exodecorateur_angryballs.maladroit.modele.Billeable;
-import exodecorateur_angryballs.maladroit.modele.Bille;
 
 /**
  * responsable du dessin des billes
@@ -15,6 +13,10 @@ import exodecorateur_angryballs.maladroit.modele.Bille;
  * 
  */
 public class Billard extends Canvas {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Vector<Billeable> billes;
 
 	public Billard(Vector<Billeable> billes2) {
@@ -32,8 +34,6 @@ public class Billard extends Canvas {
 
 		for (i = 0; i < this.billes.size(); ++i)
 			this.billes.get(i).dessine(graphics);
-
 		// System.out.println("billes dans le billard = " + billes);
 	}
-
 }

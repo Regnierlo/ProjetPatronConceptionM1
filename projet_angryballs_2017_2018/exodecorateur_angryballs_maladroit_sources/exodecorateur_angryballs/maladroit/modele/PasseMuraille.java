@@ -8,11 +8,7 @@ public class PasseMuraille extends Decorator{
 		super(bille);
 	}
 	
-	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
-			double hauteur) {
-		Collisions.collisionBilleContourPasseMuraille(this.getPosition(), abscisseCoinHautGauche,
-				ordonnéeCoinHautGauche, largeur, hauteur);
-
+	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,double hauteur) {
+		Collisions.collisionBilleContourPasseMuraille(this.getPosition(), abscisseCoinHautGauche,ordonnéeCoinHautGauche, largeur, hauteur);
 	}
-
 }
