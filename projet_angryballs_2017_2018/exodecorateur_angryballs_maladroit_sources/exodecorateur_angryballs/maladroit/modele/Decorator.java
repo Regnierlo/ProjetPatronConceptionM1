@@ -11,8 +11,8 @@ public class Decorator implements Billeable{
     public Decorator(final Billeable bille) {
         this.bille = bille;
     }
-	public void gestionAccélération(Vector<Billeable> billes) {
-		bille.gestionAccélération(billes);
+	public void gestionAcceleration(Vector<Billeable> billes) {
+		bille.gestionAcceleration(billes);
 	}
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur, double hauteur) {
 		bille.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
@@ -33,9 +33,9 @@ public class Decorator implements Billeable{
 		return bille.getVitesse();
 	}
 	@Override
-	public Vecteur getAccélération() {
+	public Vecteur getAcceleration() {
 		// TODO Auto-generated method stub
-		return bille.getAccélération();
+		return bille.getAcceleration();
 	}
 	@Override
 	public int getClef() {
@@ -54,9 +54,9 @@ public class Decorator implements Billeable{
 		
 	}
 	@Override
-	public void déplacer(double deltaT) {
+	public void deplacer(double deltaT) {
 		// TODO Auto-generated method stub
-		bille.déplacer(deltaT);
+		bille.deplacer(deltaT);
 	}
 	@Override
 	public void dessine(Graphics g) {

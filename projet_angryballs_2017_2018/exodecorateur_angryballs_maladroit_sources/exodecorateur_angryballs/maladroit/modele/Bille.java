@@ -19,7 +19,7 @@ public class Bille implements Billeable{
 	public Vecteur position; // centre de la bille
 	public double rayon; // rayon > 0
 	public Vecteur vitesse;
-	public Vecteur accélération;
+	public Vecteur acceleration;
 	public int clef; // identifiant unique de cette bille
 	private Color couleur;
 	private static int prochaineClef = 0;
@@ -33,11 +33,11 @@ public class Bille implements Billeable{
 	 * @param accélération
 	 * @param couleur
 	 */
-	protected Bille(Vecteur centre, double rayon, Vecteur vitesse, Vecteur accélération, Color couleur) {
+	protected Bille(Vecteur centre, double rayon, Vecteur vitesse, Vecteur acceleration, Color couleur) {
 		this.position = centre;
 		this.rayon = rayon;
 		this.vitesse = vitesse;
-		this.accélération = accélération;
+		this.acceleration = acceleration;
 		this.couleur = couleur;
 		this.clef = Bille.prochaineClef++;
 	}
@@ -76,8 +76,8 @@ public class Bille implements Billeable{
 	/**
 	 * @return the accélération
 	 */
-	public Vecteur getAccélération() {
-		return this.accélération;
+	public Vecteur getAcceleration() {
+		return this.acceleration;
 	}
 
 	/**
@@ -101,8 +101,8 @@ public class Bille implements Billeable{
 	 *
 	 * La bille subit par défaut un mouvement uniformément accéléré
 	 */
-	public void déplacer(double deltaT) {
-		Cinematique.mouvementUniformémentAccéléré(this.getPosition(), this.getVitesse(), this.getAccélération(),
+	public void deplacer(double deltaT) {
+		Cinematique.mouvementUniformémentAccéléré(this.getPosition(), this.getVitesse(), this.getAcceleration(),
 				deltaT);
 	}
 
@@ -114,8 +114,8 @@ public class Bille implements Billeable{
 	 * classes dérivées A ce niveau le vecteur accélération est mis à zéro (c'est à
 	 * dire pas d'accélération)
 	 */
-	public void gestionAccélération(Vector<Billeable> billes) {
-		this.getAccélération().set(Vecteur.VECTEURNUL);
+	public void gestionAcceleration(Vector<Billeable> billes) {
+		this.getAcceleration().set(Vecteur.VECTEURNUL);
 	}
 
 	/**
@@ -164,7 +164,7 @@ public class Bille implements Billeable{
 
 	public String toString() {
 		return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " accélération = "
-				+ accélération + " couleur = " + couleur + "clef = " + clef;
+				+ acceleration + " couleur = " + couleur + "clef = " + clef;
 	}
 
 	// ----------------- classe Bille -------------------------------------

@@ -9,9 +9,9 @@ public class Newton extends Decorator{
 	}
 
 	@Override
-	public void gestionAccélération(Vector<Billeable> billes) {
-		super.gestionAccélération(billes); // remise à zéro du vecteur accélération
-		this.getAccélération().ajoute(OutilsBille.gestionAccélérationNewton(this, billes)); 
+	public void gestionAcceleration(Vector<Billeable> billes) {
+		super.gestionAcceleration(billes); // remise à zéro du vecteur accélération
+		this.getAcceleration().ajoute(OutilsBille.gestionAccélérationNewton(this, billes)); 
 		// contribution de l'accélération due à l'attraction des autres billes
 	}
 }
