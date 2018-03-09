@@ -2,3 +2,8 @@
 /CadreAngryBalls.class
 /TestCadreAngryBallsSeul.class
 /VueBillard.class
+/CadreState.class
+/Visitor.class
+/ActiveVisitor.class
+/PassivVisitor.class
+/PassiveVisitor.class

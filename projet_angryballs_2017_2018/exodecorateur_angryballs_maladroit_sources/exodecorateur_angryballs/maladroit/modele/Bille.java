@@ -2,9 +2,7 @@ package exodecorateur_angryballs.maladroit.modele;
 
 import java.awt.*;
 import java.util.Vector;
-
 import mesmaths.cinematique.Cinematique;
-import mesmaths.cinematique.Collisions;
 import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
@@ -15,17 +13,15 @@ import mesmaths.geometrie.base.Vecteur;
  * 
  * 
  */
-public abstract class Bille {
+public class Bille implements Billeable{
 	// ----------------- classe Bille-------------------------------------
 
 	public Vecteur position; // centre de la bille
 	public double rayon; // rayon > 0
 	public Vecteur vitesse;
-	public Vecteur accélération;
+	public Vecteur acceleration;
 	public int clef; // identifiant unique de cette bille
-
 	private Color couleur;
-
 	private static int prochaineClef = 0;
 
 	public static double ro = 1; // masse volumique
@@ -37,11 +33,11 @@ public abstract class Bille {
 	 * @param accélération
 	 * @param couleur
 	 */
-	protected Bille(Vecteur centre, double rayon, Vecteur vitesse, Vecteur accélération, Color couleur) {
+	protected Bille(Vecteur centre, double rayon, Vecteur vitesse, Vecteur acceleration, Color couleur) {
 		this.position = centre;
 		this.rayon = rayon;
 		this.vitesse = vitesse;
-		this.accélération = accélération;
+		this.acceleration = acceleration;
 		this.couleur = couleur;
 		this.clef = Bille.prochaineClef++;
 	}
@@ -62,6 +58,13 @@ public abstract class Bille {
 	public Vecteur getPosition() {
 		return this.position;
 	}
+	/**
+	 * 
+	 * @param pos nouvelle position
+	 */
+	public void setPosition(Vecteur pos) {
+		this.position=pos;
+	}
 
 	/**
 	 * @return the rayon
@@ -80,8 +83,8 @@ public abstract class Bille {
 	/**
 	 * @return the accélération
 	 */
-	public Vecteur getAccélération() {
-		return this.accélération;
+	public Vecteur getAcceleration() {
+		return this.acceleration;
 	}
 
 	/**
@@ -105,8 +108,8 @@ public abstract class Bille {
 	 *
 	 * La bille subit par défaut un mouvement uniformément accéléré
 	 */
-	public void déplacer(double deltaT) {
-		Cinematique.mouvementUniformémentAccéléré(this.getPosition(), this.getVitesse(), this.getAccélération(),
+	public void deplacer(double deltaT) {
+		Cinematique.mouvementUniformémentAccéléré(this.getPosition(), this.getVitesse(), this.getAcceleration(),
 				deltaT);
 	}
 
@@ -118,8 +121,8 @@ public abstract class Bille {
 	 * classes dérivées A ce niveau le vecteur accélération est mis à zéro (c'est à
 	 * dire pas d'accélération)
 	 */
-	public void gestionAccélération(Vector<Bille> billes) {
-		this.getAccélération().set(Vecteur.VECTEURNUL);
+	public void gestionAcceleration(Vector<Billeable> billes) {
+		this.getAcceleration().set(Vecteur.VECTEURNUL);
 	}
 
 	/**
@@ -135,7 +138,7 @@ public abstract class Bille {
 	 *         renvoie false, il n'y a pas de collision et les billes sont laissées
 	 *         intactes
 	 */
-	public boolean gestionCollisionBilleBille(Vector<Bille> billes) {
+	public boolean gestionCollisionBilleBille(Vector<Billeable> billes) {
 		return OutilsBille.gestionCollisionBilleBille(this, billes);
 	}
 
@@ -149,8 +152,7 @@ public abstract class Bille {
 	 * La nature du comportement de la bille en réponse à cette collision est
 	 * définie dans les classes dérivées
 	 */
-	public abstract void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
-			double hauteur);
+	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,double hauteur) {}
 
 	public void dessine(Graphics g) {
 		int width, height;
@@ -169,7 +171,34 @@ public abstract class Bille {
 
 	public String toString() {
 		return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " accélération = "
-				+ accélération + " couleur = " + couleur + "clef = " + clef;
+				+ acceleration + " couleur = " + couleur + "clef = " + clef;
+	}
+
+	@Override
+	public void clic() {
+		// TODO Auto-generated method stub
+	}
+	@Override
+	public void deClic() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public BilleState getState() {
+		return null;
+		
+	}
+
+	@Override
+	public void setVitesse(Vecteur vit) {
+		// TODO Auto-generated method stub
+		vitesse=vit;
+	}
+
+	@Override
+	public void setAcceleration(Vecteur accel) {
+		// TODO Auto-generated method stub
+		acceleration=accel;
 	}
 
 	// ----------------- classe Bille -------------------------------------

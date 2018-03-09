@@ -5,10 +5,6 @@ package exodecorateur_angryballs.maladroit.vues;
  * 
  * Comme ça si vous n'aimez pas mes composants awt vous pouvez les changer sans
  * changer le reste de l'appli
- * 
- * ICI : IL N'Y A RIEN A CHANGER
- * 
- * 
  */
 public interface VueBillard {
 
@@ -16,7 +12,7 @@ public interface VueBillard {
 
 	public double hauteurBillard();
 
-	public void miseAJour();
-
 	public void montrer();
+
+	public void accepte(Visitor visitor);
 }

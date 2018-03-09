@@ -4,3 +4,12 @@
 /TestAngryBalls.class
 /TestAnimationBilles.class
 /VueBillardFactice.class
+/Observer.class
+/Observed.class
+/Observateur.class
+/Observable.class
+/Lancement.class
+/ArretSimulation.class
+/LancementSimulation.class
+/BoutonArreter.class
+/BoutonLancer.class
