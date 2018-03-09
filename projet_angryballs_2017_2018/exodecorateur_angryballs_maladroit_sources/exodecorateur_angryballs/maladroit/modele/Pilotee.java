@@ -51,5 +51,8 @@ public class Pilotee extends Decorator{
 	@Override
 	public void setPosition(Vecteur pos) {
 		etatCourant.mouvement(pos,bille);
+		bille.setAcceleration(new Vecteur(0,0));
+		bille.setVitesse(new Vecteur(0,0));
+		System.out.println(bille.getVitesse()+"  "+bille.getAccélération());
 	}
 }

@@ -58,7 +58,7 @@ public class OutilsBille {
 	 *         renvoie false, il n'y a pas de collision et les billes sont laissées
 	 *         intactes
 	 */
-	public static boolean gestionCollisionBilleBille(Bille cetteBille, Vector<Billeable> billes) {
+	public static boolean gestionCollisionBilleBille(Billeable cetteBille, Vector<Billeable> billes) {
 		// --- on récupère d'abord dans autresBilles toutes les billes sauf cetteBille
 		// ----
 

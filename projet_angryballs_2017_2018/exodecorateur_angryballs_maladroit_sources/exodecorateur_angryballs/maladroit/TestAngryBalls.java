@@ -76,9 +76,9 @@ public class TestAngryBalls {
 		// ---------------------------------
 
 		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
-		//billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))),new Vecteur(0, 0.001)));
-		//billes.add(new Newton(new Frottement(new Rebond(new Bille(p2, rayon, v2, Color.green)))));
-		//billes.add(new PasseMuraille(new Bille(p3, rayon, v3, Color.cyan)));
+		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))),new Vecteur(0, 0.001)));
+		billes.add(new Newton(new Frottement(new Rebond(new Bille(p2, rayon, v2, Color.green)))));
+		billes.add(new PasseMuraille(new Bille(p3, rayon, v3, Color.cyan)));
 		//billes.add(new Newton(new Arret(new Bille(p4, rayon, v4, Color.black))));
 		billes.add(new Pilotee(new Rebond(new Pesanteur(new Bille(p5, rayon, v5, Color.pink),new Vecteur(0, 0.001)))));
 
