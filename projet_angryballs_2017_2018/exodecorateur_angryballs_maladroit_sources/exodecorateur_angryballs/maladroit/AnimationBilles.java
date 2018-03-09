@@ -14,8 +14,6 @@ import exodecorateur_angryballs.maladroit.vues.VueBillard;
  * liste des billes. met perpï¿½tuellement ï¿½ jour les billes. gï¿½re le dï¿½lai entre
  * 2 mises ï¿½ jour (deltaT) et prï¿½vient la vue responsable du dessin des billes
  * qu'il faut mettre ï¿½ jour la scï¿½ne
- * 
- * ICI : IL N'Y A RIEN A CHANGER
  */
 public class AnimationBilles implements Runnable, Observer {
 
@@ -68,7 +66,6 @@ public class AnimationBilles implements Runnable, Observer {
 	/**
 	 * calcule le maximum de de la norme carrï¿½e (pour faire moins de calcul) des
 	 * vecteurs vitesse de la liste de billes
-	 * 
 	 */
 	static double maxVitessesCarrées(Vector<Billeable> billes) {
 		double vitesse2Max = 0;

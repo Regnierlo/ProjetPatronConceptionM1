@@ -21,7 +21,7 @@ public class Pilotee extends Decorator{
 		etatCourant=etatDrop;
 	}
 	@Override
-	public void gestionAccélération(Vector<Billeable> billes) {
+	public void gestionAcceleration(Vector<Billeable> billes) {
 		bille.setAcceleration(new Vecteur(0,0));
 	}
 	public BilleState getState() {
@@ -34,7 +34,7 @@ public class Pilotee extends Decorator{
 	@Override
 	public void clic() {
 		// TODO Auto-generated method stub
-		vectAccel=bille.getAccélération();
+		vectAccel=bille.getAcceleration();
 		vectVit=bille.getVitesse();
 		bille.setAcceleration(new Vecteur(0,0));
 		bille.setVitesse(new Vecteur(0,0));

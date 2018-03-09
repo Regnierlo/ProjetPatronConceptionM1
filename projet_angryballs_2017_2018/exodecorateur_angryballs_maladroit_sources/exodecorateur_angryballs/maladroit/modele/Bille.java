@@ -198,7 +198,7 @@ public class Bille implements Billeable{
 	@Override
 	public void setAcceleration(Vecteur accel) {
 		// TODO Auto-generated method stub
-		accélération=accel;
+		acceleration=accel;
 	}
 
 	// ----------------- classe Bille -------------------------------------
