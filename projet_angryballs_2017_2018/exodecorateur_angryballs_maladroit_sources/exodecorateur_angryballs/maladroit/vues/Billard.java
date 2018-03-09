@@ -5,12 +5,14 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.Vector;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
+import outilsvues.EcouteurMouse;
+import outilsvues.EcouteurMouseMotion;
 
 /**
  * responsable du dessin des billes
  * 
  */
-public class Billard extends Canvas {
+public class Billard extends Canvas{
 	/**
 	 * 
 	 */
@@ -19,6 +21,8 @@ public class Billard extends Canvas {
 
 	public Billard(Vector<Billeable> billes2) {
 		this.billes = billes2;
+		this.addMouseListener(new EcouteurMouse(billes));
+		this.addMouseMotionListener(new EcouteurMouseMotion(billes));
 	}
 
 	/*

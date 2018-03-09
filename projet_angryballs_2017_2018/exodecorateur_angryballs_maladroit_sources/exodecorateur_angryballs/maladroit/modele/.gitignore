@@ -16,3 +16,7 @@
 /Arret.class
 /Newton.class
 /Pesanteur.class
+/BilleState.class
+/BilleStateHold.class
+/BilleStateDrop.class
+/Pilotee.class

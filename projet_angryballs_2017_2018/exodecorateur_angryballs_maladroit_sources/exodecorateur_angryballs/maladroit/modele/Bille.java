@@ -58,6 +58,13 @@ public class Bille implements Billeable{
 	public Vecteur getPosition() {
 		return this.position;
 	}
+	/**
+	 * 
+	 * @param pos nouvelle position
+	 */
+	public void setPosition(Vecteur pos) {
+		this.position=pos;
+	}
 
 	/**
 	 * @return the rayon
@@ -165,6 +172,33 @@ public class Bille implements Billeable{
 	public String toString() {
 		return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " accélération = "
 				+ acceleration + " couleur = " + couleur + "clef = " + clef;
+	}
+
+	@Override
+	public void clic() {
+		// TODO Auto-generated method stub
+	}
+	@Override
+	public void deClic() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public BilleState getState() {
+		return null;
+		
+	}
+
+	@Override
+	public void setVitesse(Vecteur vit) {
+		// TODO Auto-generated method stub
+		vitesse=vit;
+	}
+
+	@Override
+	public void setAcceleration(Vecteur accel) {
+		// TODO Auto-generated method stub
+		accélération=accel;
 	}
 
 	// ----------------- classe Bille -------------------------------------
