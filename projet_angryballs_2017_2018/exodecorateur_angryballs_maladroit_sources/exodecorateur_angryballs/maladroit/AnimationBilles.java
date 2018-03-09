@@ -10,16 +10,16 @@ import exodecorateur_angryballs.maladroit.vues.PassiveVisitor;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
- * responsable de l'animation des billes, c-ï¿½-d responsable du mouvement de la
- * liste des billes. met perpï¿½tuellement ï¿½ jour les billes. gï¿½re le dï¿½lai entre
- * 2 mises ï¿½ jour (deltaT) et prï¿½vient la vue responsable du dessin des billes
- * qu'il faut mettre ï¿½ jour la scï¿½ne
+ * responsable de l'animation des billes, c'est-a-dire responsable du mouvement de la
+ * liste des billes. Met perpetuellement a jour les billes. gere le delai entre
+ * 2 mises a jour (deltaT) et previent la vue responsable du dessin des billes
+ * qu'il faut mettre a jour la scene
  */
 public class AnimationBilles implements Runnable, Observer {
 
 	Vector<Billeable> billes; // la liste de toutes les billes en mouvement
 	VueBillard vueBillard; // la vue responsable du dessin des billes
-	private Thread thread; // pour lancer et arrï¿½ter les billes
+	private Thread thread; // pour lancer et arreter les billes
 	private static final double COEFF = 0.5;
 
 	/**
@@ -32,39 +32,44 @@ public class AnimationBilles implements Runnable, Observer {
 		this.thread = null; // est-ce utile ?
 	}
 
+	/**
+	 * Fonction principale permettant de lancer l'animation
+	 */
 	@Override
 	public void run() {
 		try {
-			double deltaT; // dï¿½lai entre 2 mises ï¿½ jour de la liste des billes
+			double deltaT; // delai entre 2 mises a jour de la liste des billes
 			Billeable billeCourante;
-			double minRayons = AnimationBilles.minRayons(billes); // nï¿½cessaire au calcul de deltaT
-			double minRayons2 = minRayons * minRayons; // nï¿½cessaire au calcul de deltaT
+			double minRayons = AnimationBilles.minRayons(billes); // necessaire au calcul de deltaT
+			double minRayons2 = minRayons * minRayons; // necessaire au calcul de deltaT
 
 			while (!Thread.interrupted()) // gestion du mouvement
 			{
-				// deltaT = COEFF*minRayons2/(1+maxVitessesCarrï¿½es(billes)); // mise ï¿½ jour
-				// deltaT. L'addition + 1 est une astuce pour ï¿½viter les divisions par zï¿½ro
-				// System.err.println("deltaT = " + deltaT);
 				deltaT = 10;
 				int i;
 				
-				for (i = 0; i < billes.size(); ++i) // mise ï¿½ jour de la liste des billes
+				for (i = 0; i < billes.size(); ++i) // mise a jour de la liste des billes
 				{
 					billeCourante = billes.get(i);
-					billeCourante.deplacer(deltaT); // mise ï¿½ jour position et vitesse de cette bille
-					billeCourante.gestionAcceleration(billes); // calcul de l'accï¿½lï¿½ration subie par cette bille
+					billeCourante.deplacer(deltaT); // mise a jour position et vitesse de cette bille
+					billeCourante.gestionAcceleration(billes); // calcul de l'acceleration subie par cette bille
 					billeCourante.gestionCollisionBilleBille(billes);
 					billeCourante.collisionContour(0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard()); 
 				}
+				
+				//DP visitor lancant l'animation de maniere fluide
 				vueBillard.accepte(new ActiveVisitor());
-				Thread.sleep((int) deltaT); // deltaT peut etre considï¿½rï¿½ comme le delai entre 2 flashes d'un stroboscope qui eclairerait la scene
+				
+				//DP visitor lancant l'animation via la methode paint
+				//vueBillard.accepte(new PassiveVisitor());
+				Thread.sleep((int) deltaT); // deltaT peut etre considere comme le delai entre 2 flashes d'un stroboscope qui eclairerait la scene
 			}
 		}
 		catch (InterruptedException e){}
 	}
 
 	/**
-	 * calcule le maximum de de la norme carrï¿½e (pour faire moins de calcul) des
+	 * calcule le maximum de de la norme carree (pour faire moins de calcul) des
 	 * vecteurs vitesse de la liste de billes
 	 */
 	static double maxVitessesCarrées(Vector<Billeable> billes) {
@@ -101,14 +106,19 @@ public class AnimationBilles implements Runnable, Observer {
 		return rayonMin;
 	}
 
+	/**
+	 * Permet de lancer l'animation via la creation d'un thread
+	 */
 	public void lancerAnimation() {
-		if (this.thread == null) {
-			
+		if (this.thread == null) {			
 			this.thread = new Thread(this);
 			thread.start();
 		}
 	}
 
+	/**
+	 * Permet d'arreter l'animation via l'interruption de ce thread
+	 */
 	public void arreterAnimation() {
 		if (thread != null) {
 			this.thread.interrupt();
@@ -117,8 +127,8 @@ public class AnimationBilles implements Runnable, Observer {
 	}
 
 	/***
-	 * Mise ï¿½ jour des donnï¿½es via les observateurs en rï¿½cupï¿½rant l'ï¿½tat de CadreState.
-	 * On lance ainsi l'animation si le bouton Lancer est cliquï¿½ sinon on l'arrï¿½te.
+	 * Mise a jour des donnees via les observateurs en recuperant l'etat de CadreState.
+	 * On lance ainsi l'animation si le bouton Lancer est clique sinon on l'arrete.
 	 */
 	@Override
 	public void update(Observable o, Object obj) {

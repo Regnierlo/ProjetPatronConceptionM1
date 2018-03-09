@@ -1,7 +1,7 @@
 package exodecorateur_angryballs.maladroit.vues;
 
 /**
- * contrat respecté par toute vue capable de dessiner la liste des billes
+ * contrat respecte par toute vue capable de dessiner la liste des billes
  * 
  * Comme ça si vous n'aimez pas mes composants awt vous pouvez les changer sans
  * changer le reste de l'appli

@@ -12,5 +12,4 @@ public class BilleStateHold implements BilleState {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

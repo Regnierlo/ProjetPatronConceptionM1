@@ -39,12 +39,15 @@ public class TestAngryBalls {
 		xMax = cadre.largeurBillard(); // abscisse maximale
 		yMax = cadre.hauteurBillard(); // ordonnee maximale
 
-		double rayon = 0.05 * Math.min(xMax, yMax);   
-		//rayon des billes : ici toutes les billes ont le meme rayon, mais ce n'est pas obligatoire
-
-		Vecteur p0, p1, p2, p3, p4, p5, v0, v1, v2, v3, v4, v5; 
-		//les positions des centres des billes et les vecteurs vitesse au demarrage. Elles vont etre choisies alï¿½atoirement
+		//rayon des billes 
+		double rayon = 0.05 * Math.min(xMax, yMax);
+		double rayon2 = 0.08 * Math.min(xMax, yMax);
+		double rayon3 = 0.03 * Math.min(xMax, yMax); 
 		
+		//creationd des differents vecteurs
+		Vecteur p0, p1, p2, p3, p4, p5, v0, v1, v2, v3, v4, v5; 
+		
+		//les positions des centres des billes et les vecteurs vitesse au demarrage. Elles vont etre choisies de maniere aleatoire
 		//creation des vecteurs position des billes
 
 		p0 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
@@ -66,10 +69,10 @@ public class TestAngryBalls {
 		//creation des billes avec le DP decorator
 		
 		billes.add(new Rebond(new Bille(p0, rayon, v0, Color.red)));
-		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon, v1, Color.yellow))),new Vecteur(0, 0.001)));
+		billes.add(new Pesanteur(new Frottement(new Rebond(new Bille(p1, rayon2, v1, Color.yellow))),new Vecteur(0, 0.001)));
 		billes.add(new Newton(new Frottement(new Rebond(new Bille(p2, rayon, v2, Color.green)))));
-		billes.add(new PasseMuraille(new Bille(p3, rayon, v3, Color.cyan)));
-		billes.add(new Newton(new Arret(new Bille(p4, rayon, v4, Color.black))));	
-		billes.add(new Pilotee(new Rebond(new Pesanteur(new Bille(p5, rayon, v5, Color.pink),new Vecteur(0, 0.001)))));
+		billes.add(new PasseMuraille(new Bille(p3, rayon3, v3, Color.cyan)));
+		billes.add(new Newton(new Arret(new Bille(p4, rayon3, v4, Color.black))));	
+		billes.add(new Pilotee(new Rebond(new Pesanteur(new Bille(p5, rayon2, v5, Color.pink),new Vecteur(0, 0.001)))));
 	}
 }

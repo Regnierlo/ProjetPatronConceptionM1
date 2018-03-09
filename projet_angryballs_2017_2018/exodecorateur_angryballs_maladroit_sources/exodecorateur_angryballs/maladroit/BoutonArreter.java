@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import exodecorateur_angryballs.maladroit.vues.CadreState;
 
 /**
- * Changement du bouton qui n'est plus un écouteur mais un bouton à part entière.
- * Ainsi, on va l'utiliser pour changer l'état du Cadre.
+ * Changement du bouton qui n'est plus un ecouteur mais un bouton à part entiere.
+ * Ainsi, on va l'utiliser pour changer l'etat du Cadre.
  * 
  */
 public class BoutonArreter extends Button implements ActionListener {
@@ -19,12 +19,21 @@ public class BoutonArreter extends Button implements ActionListener {
 	CadreState cadreState;
 	String string;
 
+	/**
+	 * 
+	 * @param str
+	 * @param cadreState
+	 */
 	public BoutonArreter(String str, CadreState cadreState) {
 		this.string = str;
 		this.cadreState = cadreState;
 		this.addActionListener(this);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.cadreState.arreterBilles();

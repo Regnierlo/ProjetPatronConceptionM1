@@ -10,13 +10,11 @@ import outilsvues.EcouteurTerminaison;
 import outilsvues.Outils;
 
 /**
- * Vue dessinant les billes et contenant les 3 boutons de contrôle (arrêt du
- * programme, lancer les billes, arréter les billes)
+ * Vue dessinant les billes et contenant les 3 boutons de controle (arret du
+ * programme, lancer les billes, arreter les billes)
  */
 public class CadreAngryBalls extends Frame implements VueBillard {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	TextField présentation;
 	Billard billard;
@@ -28,6 +26,13 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 	BoutonArreter BoutonArreter;
 	private CadreState cadreState;
 	
+	/**
+	 * 
+	 * @param titre
+	 * @param message
+	 * @param billes
+	 * @throws HeadlessException
+	 */
 	public CadreAngryBalls(String titre, String message, Vector<Billeable> billes) throws HeadlessException {
 		super(titre);
 		Outils.place(this, 0.33, 0.33, 0.5, 0.5);
@@ -56,11 +61,11 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 	    this.cadreState = new CadreState(this.animationBilles);
 	
 	    this.lancerBilles = (Button) new BoutonLancer("",this.cadreState); 
-	    this.lancerBilles.setLabel("Lancer"); //ici on force le label pour qu'il soit affiché
+	    this.lancerBilles.setLabel("Lancer"); //ici on force le label pour qu'il soit affiche
 	    this.bas.add(this.lancerBilles);
 	     
 	    this.arreterBilles = (Button) new BoutonArreter("", this.cadreState);
-	    this.arreterBilles.setLabel("Arrêter"); //ici on force le label pour qu'il soit affiché
+	    this.arreterBilles.setLabel("Arrêter"); //ici on force le label pour qu'il soit affiche
 	    this.bas.add(this.arreterBilles);
 	}
 
@@ -74,8 +79,7 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see exodecorateur.vues.VueBillard#montrer()
+	 * @see exodecorateur_angryballs.maladroit.vues.VueBillard#montrer()
 	 */
 	@Override
 	public void montrer() {
@@ -83,9 +87,12 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 		this.setVisible(true);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see exodecorateur_angryballs.maladroit.vues.VueBillard#accepte(exodecorateur_angryballs.maladroit.vues.Visitor)
+	 */
 	@Override
 	public void accepte(Visitor visitor) {
 		visitor.visite(billard);
-		
 	}
 }

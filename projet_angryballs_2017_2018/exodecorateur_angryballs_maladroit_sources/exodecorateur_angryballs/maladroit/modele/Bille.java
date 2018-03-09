@@ -7,11 +7,7 @@ import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
 
 /**
- * Cas général d'une bille de billard
- * 
- * A MODIFIER
- * 
- * 
+ * Cas general d'une bille de billard
  */
 public class Bille implements Billeable{
 	// ----------------- classe Bille-------------------------------------
@@ -30,7 +26,7 @@ public class Bille implements Billeable{
 	 * @param centre
 	 * @param rayon
 	 * @param vitesse
-	 * @param accélération
+	 * @param acceleration
 	 * @param couleur
 	 */
 	protected Bille(Vecteur centre, double rayon, Vecteur vitesse, Vecteur acceleration, Color couleur) {
@@ -81,7 +77,7 @@ public class Bille implements Billeable{
 	}
 
 	/**
-	 * @return the accélération
+	 * @return the acceleration
 	 */
 	public Vecteur getAcceleration() {
 		return this.acceleration;
@@ -99,14 +95,11 @@ public class Bille implements Billeable{
 	}
 
 	/**
-	 * mise à jour de position et vitesse à t+deltaT à partir de position et vitesse
-	 * à l'instant t
-	 * 
+	 * mise a jour de position et vitesse a t+deltaT a partir de position et vitesse
+	 * a l'instant t
 	 * modifie le vecteur position et le vecteur vitesse
-	 * 
-	 * laisse le vecteur accélération intact
-	 *
-	 * La bille subit par défaut un mouvement uniformément accéléré
+	 * laisse le vecteur acceleration intact
+	 * La bille subit par defaut un mouvement uniformement accelere
 	 */
 	public void deplacer(double deltaT) {
 		Cinematique.mouvementUniformémentAccéléré(this.getPosition(), this.getVitesse(), this.getAcceleration(),
@@ -114,28 +107,28 @@ public class Bille implements Billeable{
 	}
 
 	/**
-	 * calcul (c-à-d mise à jour) éventuel du vecteur accélération. billes est la
-	 * liste de toutes les billes en mouvement Cette méthode peut avoir besoin de
+	 * calcul (c-a-d mise a jour) eventuel du vecteur acceleration. billes est la
+	 * liste de toutes les billes en mouvement Cette methode peut avoir besoin de
 	 * "billes" si this subit l'attraction gravitationnelle des autres billes La
-	 * nature du calcul du vecteur accélération de la bille est définie dans les
-	 * classes dérivées A ce niveau le vecteur accélération est mis à zéro (c'est à
-	 * dire pas d'accélération)
+	 * nature du calcul du vecteur acceleration de la bille est definie dans les
+	 * classes derivees A ce niveau le vecteur acceleration est mis a zero (c'est a
+	 * dire pas d'acceleration)
 	 */
 	public void gestionAcceleration(Vector<Billeable> billes) {
 		this.getAcceleration().set(Vecteur.VECTEURNUL);
 	}
 
 	/**
-	 * gestion de l'éventuelle collision de cette bille avec les autres billes
+	 * gestion de l'eventuelle collision de cette bille avec les autres billes
 	 *
 	 * billes est la liste de toutes les billes en mouvement
 	 * 
-	 * Le comportement par défaut est le choc parfaitement élastique (c-à-d rebond
+	 * Le comportement par defaut est le choc parfaitement elastique (c-a-d rebond
 	 * sans amortissement)
 	 * 
 	 * @return true si il y a collision et dans ce cas les positions et vecteurs
-	 *         vitesses des 2 billes impliquées dans le choc sont modifiées si
-	 *         renvoie false, il n'y a pas de collision et les billes sont laissées
+	 *         vitesses des 2 billes impliquees dans le choc sont modifiees si
+	 *         renvoie false, il n'y a pas de collision et les billes sont laissees
 	 *         intactes
 	 */
 	public boolean gestionCollisionBilleBille(Vector<Billeable> billes) {
@@ -143,16 +136,16 @@ public class Bille implements Billeable{
 	}
 
 	/**
-	 * gestion de l'éventuelle collision de la bille (this) avec le contour
-	 * rectangulaire de l'écran défini par (abscisseCoinHautGauche,
-	 * ordonnéeCoinHautGauche, largeur, hauteur)
+	 * gestion de l'eventuelle collision de la bille (this) avec le contour
+	 * rectangulaire de l'ecran defini par (abscisseCoinHautGauche,
+	 * ordonneeCoinHautGauche, largeur, hauteur)
 	 * 
-	 * détecte si il y a collision et le cas échéant met à jour position et vitesse
+	 * detecte si il y a collision et le cas echeant met a jour position et vitesse
 	 * 
-	 * La nature du comportement de la bille en réponse à cette collision est
-	 * définie dans les classes dérivées
+	 * La nature du comportement de la bille en reponse a cette collision est
+	 * definie dans les classes derivees
 	 */
-	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,double hauteur) {}
+	public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur,double hauteur) {}
 
 	public void dessine(Graphics g) {
 		int width, height;
@@ -170,7 +163,7 @@ public class Bille implements Billeable{
 	}
 
 	public String toString() {
-		return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " accélération = "
+		return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " acceleration = "
 				+ acceleration + " couleur = " + couleur + "clef = " + clef;
 	}
 
