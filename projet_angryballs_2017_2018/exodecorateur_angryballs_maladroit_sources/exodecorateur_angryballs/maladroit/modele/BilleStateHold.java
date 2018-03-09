@@ -9,7 +9,6 @@ public class BilleStateHold implements BilleState {
 		bille.setPosition(pos);
 		bille.setAcceleration(new Vecteur(0,0));
 		bille.setVitesse(new Vecteur(0,0));
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 }
