@@ -4,10 +4,18 @@ import mesmaths.cinematique.Collisions;
 
 public class Arret extends Decorator{
 
+	/**
+	 * 
+	 * @param bille
+	 */
 	public Arret(Billeable bille) {
 		super(bille);
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see exodecorateur_angryballs.maladroit.modele.Decorator#collisionContour(double, double, double, double)
+	 */
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur, double hauteur) 
 	{

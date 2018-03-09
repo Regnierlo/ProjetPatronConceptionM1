@@ -6,9 +6,6 @@ public class BilleStateHold implements BilleState {
 
 	@Override
 	public void mouvement(Vecteur pos,Billeable bille) {
-		bille.setPosition(pos);
-		// TODO Auto-generated method stub
-		
+		bille.setPosition(pos);	
 	}
-
 }

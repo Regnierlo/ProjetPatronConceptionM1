@@ -13,12 +13,14 @@ import outilsvues.EcouteurMouseMotion;
  * 
  */
 public class Billard extends Canvas{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	Vector<Billeable> billes;
 
+	/**
+	 * 
+	 * @param billes2
+	 */
 	public Billard(Vector<Billeable> billes2) {
 		this.billes = billes2;
 		this.addMouseListener(new EcouteurMouse(billes));
@@ -37,7 +39,13 @@ public class Billard extends Canvas{
 		for (i = 0; i < this.billes.size(); ++i)
 			this.billes.get(i).dessine(graphics);
 	}
-
+	
+	/**
+	 * Methode permettant l'affichage de maniere fluide grace a la creation d'un double buffer
+	 * celui-ci va etre retourne afin d'avoir l'affichage des frames sur un canvas
+	 * on va ensuite recreer un background avec les dimensions afin d'afficher les resultats
+	 * puis on va tout simplement dessiner les billes et montrer ce que le buffer recoit en frame
+	 */
 	public void redessine() {
 		int i;
 		BufferStrategy myStrategy = getBufferStrategy();        
