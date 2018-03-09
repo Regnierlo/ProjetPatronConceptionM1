@@ -193,6 +193,4 @@ public class Bille implements Billeable{
 		// TODO Auto-generated method stub
 		acceleration=accel;
 	}
-
-	// ----------------- classe Bille -------------------------------------
 }

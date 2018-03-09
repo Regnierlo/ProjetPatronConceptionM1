@@ -9,12 +9,8 @@ public class Frottement extends Decorator{
 		super(bille);
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.modele.Decorator#gestionAcceleration(java.util.Vector)
-	 */
 	public void gestionAcceleration(Vector<Billeable> billes) {
-		super.gestionAcceleration(billes); // remise à zéro du vecteur accélération
+		super.gestionAcceleration(billes); // remise a zero du vecteur acceleration
 		this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.masse(), this.getVitesse())); 
 
 		// contribution de l'acceleration due au frottement dans l'air

@@ -16,7 +16,8 @@ public class BoutonLancer extends Button implements ActionListener {
 	String string;
 
 	/**
-	 * 
+	 * Permet de lancer l'animation via un Action listener
+	 * Creation du bouton
 	 * @param str
 	 * @param cadreState
 	 */
@@ -26,10 +27,6 @@ public class BoutonLancer extends Button implements ActionListener {
 		this.addActionListener(this);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		this.cadreState.lancerBilles();

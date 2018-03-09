@@ -77,20 +77,12 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 		return this.billard.getHeight();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.vues.VueBillard#montrer()
-	 */
 	@Override
 	public void montrer() {
 		
 		this.setVisible(true);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.vues.VueBillard#accepte(exodecorateur_angryballs.maladroit.vues.Visitor)
-	 */
 	@Override
 	public void accepte(Visitor visitor) {
 		visitor.visite(billard);

@@ -27,11 +27,6 @@ public class Billard extends Canvas{
 		this.addMouseMotionListener(new EcouteurMouseMotion(billes));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.awt.Canvas#paint(java.awt.Graphics)
-	 */
 	@Override
 	public void paint(Graphics graphics) {
 		int i;

@@ -33,7 +33,7 @@ public class TestAnimationBilles {
 		double rayonmin2 = AnimationBilles.minRayons(billes);
 
 		System.out.println("vmax2 = " + vmax2 + "rayonMin2 = " + rayonmin2);
-		int c = System.in.read();
+		//int c = System.in.read();
 
 		VueBillard vueBillardFactice = new VueBillardFactice();
 

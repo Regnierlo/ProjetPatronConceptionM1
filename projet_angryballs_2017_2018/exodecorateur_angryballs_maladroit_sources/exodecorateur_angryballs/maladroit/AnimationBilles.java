@@ -4,10 +4,12 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Vector;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
-import exodecorateur_angryballs.maladroit.vues.ActiveVisitor;
-import exodecorateur_angryballs.maladroit.vues.CadreState;
-import exodecorateur_angryballs.maladroit.vues.PassiveVisitor;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
+import exodecorateur_angryballs.maladroit.vues.CadreState;
+//Changer en fonction de quel type d'animation on active via le DP Visitor
+import exodecorateur_angryballs.maladroit.vues.ActiveVisitor;
+//import exodecorateur_angryballs.maladroit.vues.PassiveVisitor;
+
 
 /**
  * responsable de l'animation des billes, c'est-a-dire responsable du mouvement de la
@@ -20,7 +22,6 @@ public class AnimationBilles implements Runnable, Observer {
 	Vector<Billeable> billes; // la liste de toutes les billes en mouvement
 	VueBillard vueBillard; // la vue responsable du dessin des billes
 	private Thread thread; // pour lancer et arreter les billes
-	private static final double COEFF = 0.5;
 
 	/**
 	 * @param billes
@@ -29,7 +30,6 @@ public class AnimationBilles implements Runnable, Observer {
 	public AnimationBilles(Vector<Billeable> billes, VueBillard vueBillard) {
 		this.billes = billes;
 		this.vueBillard = vueBillard;
-		this.thread = null; // est-ce utile ?
 	}
 
 	/**
@@ -40,8 +40,6 @@ public class AnimationBilles implements Runnable, Observer {
 		try {
 			double deltaT; // delai entre 2 mises a jour de la liste des billes
 			Billeable billeCourante;
-			double minRayons = AnimationBilles.minRayons(billes); // necessaire au calcul de deltaT
-			double minRayons2 = minRayons * minRayons; // necessaire au calcul de deltaT
 
 			while (!Thread.interrupted()) // gestion du mouvement
 			{

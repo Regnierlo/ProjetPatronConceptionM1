@@ -12,10 +12,6 @@ public class Arret extends Decorator{
 		super(bille);
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.modele.Decorator#collisionContour(double, double, double, double)
-	 */
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur, double hauteur) 
 	{

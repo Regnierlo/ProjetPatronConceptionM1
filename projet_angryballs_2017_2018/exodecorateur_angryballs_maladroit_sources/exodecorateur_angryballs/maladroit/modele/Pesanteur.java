@@ -12,10 +12,6 @@ public class Pesanteur extends Decorator {
 		this.pesanteur = pesanteur;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.modele.Decorator#gestionAcceleration(java.util.Vector)
-	 */
 	@Override
 	public void gestionAcceleration(Vector<Billeable> billes) {
 		super.gestionAcceleration(billes); // remise a zero du vecteur acceleration

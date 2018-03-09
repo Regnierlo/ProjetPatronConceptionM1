@@ -20,7 +20,8 @@ public class BoutonArreter extends Button implements ActionListener {
 	String string;
 
 	/**
-	 * 
+	 * Permet d'arrêter l'animation via un Action listener
+	 * Creation du bouton
 	 * @param str
 	 * @param cadreState
 	 */
@@ -30,10 +31,6 @@ public class BoutonArreter extends Button implements ActionListener {
 		this.addActionListener(this);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.cadreState.arreterBilles();

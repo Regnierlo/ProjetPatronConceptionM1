@@ -8,10 +8,6 @@ public class Newton extends Decorator{
 		super(bille);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see exodecorateur_angryballs.maladroit.modele.Decorator#gestionAcceleration(java.util.Vector)
-	 */
 	@Override
 	public void gestionAcceleration(Vector<Billeable> billes) {
 		super.gestionAcceleration(billes); // remise à zéro du vecteur accélération
