@@ -2,12 +2,9 @@ package exodecorateur_angryballs.maladroit.vues;
 
 import java.awt.*;
 import java.util.Vector;
-<<<<<<< HEAD
 import exodecorateur_angryballs.maladroit.AnimationBilles;
 import exodecorateur_angryballs.maladroit.BoutonArreter;
 import exodecorateur_angryballs.maladroit.BoutonLancer;
-=======
->>>>>>> DP_Decorator
 import exodecorateur_angryballs.maladroit.modele.Billeable;
 import outilsvues.EcouteurTerminaison;
 import outilsvues.Outils;
@@ -52,7 +49,6 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 		this.haut.add(this.présentation);
 
 		this.billard = new Billard(billes);
-<<<<<<< HEAD
 		this.billard.setBackground(new Color(10,110,10)); //petite couleur de billard 
 	    this.add(this.billard);
 	        
@@ -66,14 +62,6 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 	    this.arreterBilles = (Button) new BoutonArreter("", this.cadreState);
 	    this.arreterBilles.setLabel("Arrêter"); //ici on force le label pour qu'il soit affiché
 	    this.bas.add(this.arreterBilles);
-=======
-		this.add(this.billard);
-
-		this.lancerBilles = new Button("lancer les billes");
-		this.bas.add(this.lancerBilles);
-		this.arrêterBilles = new Button("arrêter les billes");
-		this.bas.add(this.arrêterBilles);
->>>>>>> DP_Decorator
 	}
 
 	public double largeurBillard() {
@@ -82,11 +70,6 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 
 	public double hauteurBillard() {
 		return this.billard.getHeight();
-	}
-	
-	@Override
-	public void miseAJour() {
-		this.billard.repaint();
 	}
 
 	/*
@@ -98,5 +81,11 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 	public void montrer() {
 		
 		this.setVisible(true);
+	}
+
+	@Override
+	public void accepte(Visitor visitor) {
+		visitor.visite(billard);
+		
 	}
 }

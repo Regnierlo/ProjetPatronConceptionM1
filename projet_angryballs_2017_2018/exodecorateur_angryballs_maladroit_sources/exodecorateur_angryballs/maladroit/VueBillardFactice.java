@@ -1,5 +1,6 @@
 package exodecorateur_angryballs.maladroit;
 
+import exodecorateur_angryballs.maladroit.vues.Visitor;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 public class VueBillardFactice implements VueBillard {
@@ -17,12 +18,13 @@ public class VueBillardFactice implements VueBillard {
 	}
 
 	@Override
-	public void miseAJour() {
+	public void montrer() {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void montrer() {
+	public void accepte(Visitor visitor) {
 		// TODO Auto-generated method stub
+		
 	}
 }

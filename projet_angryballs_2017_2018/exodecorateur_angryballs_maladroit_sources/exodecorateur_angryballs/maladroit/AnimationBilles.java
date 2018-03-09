@@ -4,7 +4,9 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Vector;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
+import exodecorateur_angryballs.maladroit.vues.ActiveVisitor;
 import exodecorateur_angryballs.maladroit.vues.CadreState;
+import exodecorateur_angryballs.maladroit.vues.PassiveVisitor;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
@@ -56,9 +58,8 @@ public class AnimationBilles implements Runnable, Observer {
 					billeCourante.gestionCollisionBilleBille(billes);
 					billeCourante.collisionContour(0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard()); 
 				}
-				
-				vueBillard.miseAJour(); // on prï¿½vient la vue qu'il faut redessiner les billes
-				Thread.sleep((int) deltaT); // deltaT peut ï¿½tre considï¿½rï¿½ comme le dï¿½lai entre 2 flashes d'un stroboscope qui ï¿½clairerait la scï¿½ne
+				vueBillard.accepte(new ActiveVisitor());
+				Thread.sleep((int) deltaT); // deltaT peut etre considï¿½rï¿½ comme le delai entre 2 flashes d'un stroboscope qui eclairerait la scene
 			}
 		}
 		catch (InterruptedException e){}
@@ -69,14 +70,14 @@ public class AnimationBilles implements Runnable, Observer {
 	 * vecteurs vitesse de la liste de billes
 	 * 
 	 */
-	static double maxVitessesCarrï¿½es(Vector<Billeable> billes) {
+	static double maxVitessesCarrées(Vector<Billeable> billes) {
 		double vitesse2Max = 0;
 		int i;
 		double vitesse2Courante;
 
 		for (i = 0; i < billes.size(); ++i)
 		{	
-			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrï¿½e()) > vitesse2Max)
+			if ((vitesse2Courante = billes.get(i).getVitesse().normeCarrée()) > vitesse2Max)
 			{
 				vitesse2Max = vitesse2Courante;
 			}			

@@ -12,7 +12,7 @@ public interface VueBillard {
 
 	public double hauteurBillard();
 
-	public void miseAJour();
-
 	public void montrer();
+
+	public void accepte(Visitor visitor);
 }

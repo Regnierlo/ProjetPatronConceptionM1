@@ -2,14 +2,12 @@ package exodecorateur_angryballs.maladroit.vues;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 import java.util.Vector;
 import exodecorateur_angryballs.maladroit.modele.Billeable;
 
 /**
  * responsable du dessin des billes
- * 
- * ICI : IL N'Y A RIEN A CHANGER
- * 
  * 
  */
 public class Billard extends Canvas {
@@ -34,6 +32,25 @@ public class Billard extends Canvas {
 
 		for (i = 0; i < this.billes.size(); ++i)
 			this.billes.get(i).dessine(graphics);
-		// System.out.println("billes dans le billard = " + billes);
+	}
+
+	public void redessine() {
+		int i;
+		BufferStrategy myStrategy = getBufferStrategy();        
+        
+		if (myStrategy == null) {
+			createBufferStrategy(2);
+			return;
+		}
+		Graphics g = null;
+		g = myStrategy.getDrawGraphics();
+		g.setColor( getBackground() );
+        g.fillRect( 0, 0, this.getWidth(), this.getHeight() );
+		for (i = 0; i < this.billes.size(); ++i)
+		{
+			this.billes.get(i).dessine(g);
+		}
+		g.dispose();
+		myStrategy.show();
 	}
 }
