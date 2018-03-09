@@ -28,7 +28,11 @@ public class EcouteurMouse implements MouseListener {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
+	 * si la souris est préssé dans une bille, lance la focntion clic() de la bille en question
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -41,7 +45,11 @@ public class EcouteurMouse implements MouseListener {
 			}
 		}
 	}
-
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
+	 * Si un clic est relaché dans une bille, lance la focntion declic() de la bille en question
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub

@@ -14,6 +14,11 @@ public class EcouteurMouseMotion implements MouseMotionListener {
 		super();
 		this.billes=billes;
 	}
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
+	 * quand le souris bouge et qu'elle est avec le clic enfoncé, lance la fonction setPosition des bille qui pocèdent un état.
+	 */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
